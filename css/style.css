@@ -956,6 +956,14 @@ img { display: block; max-width: 100%; }
 
 .contact-row .v.accent { color: var(--emerald); }
 
+.contact-row .v.whatsapp {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.contact-row .v.whatsapp svg { flex-shrink: 0; }
+
 .baseline {
   margin-top: clamp(40px, 6vw, 64px);
   display: flex;
