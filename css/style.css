@@ -360,6 +360,16 @@ img { display: block; max-width: 100%; }
 .statline dd .num { color: var(--emerald); }
 
 
+/* "Figures as of ..." caption under a stat block */
+.as-of {
+  margin-top: 14px;
+  font-family: var(--font-data);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--faint);
+}
+
+
 /* ═══ 5. ABOUT + PLATFORM CHART ══════════════════════════════════ */
 
 .about { padding-top: clamp(48px, 7vw, 96px); padding-bottom: clamp(48px, 7vw, 96px); }
