@@ -148,18 +148,16 @@ img { display: block; max-width: 100%; }
 
 .brand { display: flex; align-items: center; gap: 12px; }
 
+/* Profile photo in the nav. Emerald ring keeps the brand accent
+   that the old "MM" monogram carried. */
 .brand-mark {
-  display: grid;
-  place-items: center;
   width: 38px;
   height: 38px;
-  border-radius: 10px;
-  background: var(--emerald);
-  color: var(--ink);
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 15px;
-  letter-spacing: -0.02em;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--panel);
+  border: 2px solid var(--emerald);
 }
 
 .brand-name {
