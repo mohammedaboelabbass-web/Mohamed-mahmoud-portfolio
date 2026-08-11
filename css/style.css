@@ -201,6 +201,11 @@ img { display: block; max-width: 100%; }
   position: relative;
   padding-top: clamp(64px, 10vw, 128px);
   padding-bottom: clamp(48px, 7vw, 88px);
+  /* The glow below sits at right:-180px. `clip` trims that horizontal
+     overhang (which otherwise widens the page on mobile) while letting
+     the glow still bleed vertically. `clip` — not `hidden` — so no
+     scroll container is created. */
+  overflow-x: clip;
 }
 
 /* soft emerald glow, top-right */
@@ -701,6 +706,40 @@ img { display: block; max-width: 100%; }
   color: var(--faint);
 }
 
+/* — Compact client mention (no efficiency data yet) — */
+.case-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 22px 26px;
+}
+
+.case-line-nums {
+  font-family: var(--font-data);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.case-line-nums .num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  color: var(--emerald);
+}
+
+.case-line-note {
+  flex: 1 1 260px;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--faint);
+}
+
 /* — Featured highlight (Waqf breakdown) — */
 .feature {
   background: var(--panel);
@@ -718,6 +757,21 @@ img { display: block; max-width: 100%; }
   align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
+}
+
+/* Subset block: indented + rule on the left so it reads as a child
+   of the platform row above it, not as additional leads. */
+.feature-subset {
+  margin-left: clamp(0px, 3vw, 34px);
+  border-left: 2px solid color-mix(in srgb, var(--gold) 45%, transparent);
+}
+
+.subset-label {
+  font-family: var(--font-data);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--faint);
 }
 
 .feature-tag {
