@@ -920,39 +920,43 @@ img { display: block; max-width: 100%; }
 }
 
 
-/* — "The decision" commentary block: deliberately lighter than the
-     data tables above it, so it reads as narrative, not a headline stat. — */
-.decision {
-  margin-top: 2px;
-  padding: 15px 20px;
-  border-left: 2px solid var(--line-strong);
-  background: color-mix(in srgb, var(--panel) 50%, transparent);
-  border-radius: 0 10px 10px 0;
-}
+/* — Case-study narrative blocks (brief / approach / decision / outcome).
+     Labels match the ".case-no" eyebrow already used above each client. — */
+.cs-block { margin: 0; }
 
-.decision h4 {
+.cs-label {
   font-family: var(--font-data);
-  font-size: 10.5px;
-  font-weight: 500;
-  letter-spacing: 0.16em;
+  font-size: 12px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 7px;
+  color: var(--faint);
+  margin-bottom: 9px;
 }
 
-.decision p {
-  font-size: 13.5px;
-  line-height: 1.65;
+/* Body sits between the table notes (12.5px) and the stat figures. */
+.cs-block p:not(.cs-label) {
+  font-size: 14.5px;
+  line-height: 1.7;
   color: var(--muted);
   max-width: 74ch;
 }
 
-/* Placeholder styling — obvious while drafting, so an unfilled block
-   is impossible to miss before publishing. */
-.decision-todo {
+/* THE DECISION carries the most value, so it gets the extra weight. */
+.cs-decision {
+  padding: 18px 22px;
+  border-left: 2px solid color-mix(in srgb, var(--gold) 45%, transparent);
+  background: color-mix(in srgb, var(--panel) 55%, transparent);
+  border-radius: 0 12px 12px 0;
+}
+
+.cs-decision .cs-label { color: var(--gold); }
+
+/* Placeholder styling — deliberately loud, so an unfilled block cannot
+   be published by accident. Delete the class when you write the copy. */
+.cs-todo {
   color: var(--gold) !important;
   font-family: var(--font-data);
-  font-size: 12px !important;
+  font-size: 12.5px !important;
   letter-spacing: 0.02em;
 }
 
